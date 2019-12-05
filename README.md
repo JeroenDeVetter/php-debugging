@@ -21,7 +21,7 @@ This is what I feel like doing when coding `PHP` that doesn't mean that this sho
 **I very much encourage you to use xDebug as much as possible!**
 
 ## Must-have features
-Open up the [junior.php.broken](resources/junior_broke.php) file, read the comments, fix the code blocks as requested in the comments
+Open up the [junior.php.broken](resources/junior.php.broken) file, read the comments, fix the code blocks as requested in the comments
 and put the final file [expert.php](resources/expert.php) in the repository folder as requested.
 
 You will change this junior code in expert code!

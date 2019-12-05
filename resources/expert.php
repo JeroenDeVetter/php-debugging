@@ -1,9 +1,6 @@
 <?php
 declare(strict_types=1);
 
-declare(strict_types=1);
-
-
 // Below are several code blocks, read them, understand them and try to find whats wrong.
 // Once this exercise is finished, we'll go over the code all together and we can share how we debugged the following problems.
 // Try to fix the code every time and good luck ! (write down how you found out the answer and how you debugged the problem)
