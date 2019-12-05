@@ -45,10 +45,8 @@ new_exercise(4);
 // The print_r($week) should give:  Array ( [0] => mon [1] => tues [2] => wednes [3] => thurs [4] => fri [5] => satur [6] => sun )
 // Look up whats going wrong with this code, and then fix it, with ONE CHARACTER!
 
-foreach ($week as $day) {
-
-       print_r( $day = substr($day, 0, count(strlen($day)) - 4).' ');
-
+foreach($week as &$day) {
+    $day = substr($day, 0, strlen($day)-3);
 }
 
 print_r($week);
@@ -62,9 +60,10 @@ new_exercise(5);
 $arr = [];
 for ($letter = 'a'; $letter <= 'z'; $letter++) {
     array_push($arr, $letter);
+    if($letter == "z")break;
 }
 
-for ($i = 0 ; $i <= 25 ; $i++ )print_r($arr[$i].' '); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
+print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
 
 
 new_exercise(6);
@@ -78,12 +77,12 @@ $arr = [];
 function combineNames($str1 = "", $str2 = "")
 {
     $params = [$str1, $str2];
-    foreach ($params as $param) {
+    foreach ($params as &$param) {
         if ($param == "") {
             $param = randomHeroName();
         }
     }
-    echo implode($params, " - ");
+    return implode($params, " - ");
 }
 
 
@@ -100,10 +99,10 @@ function randomHeroName()
 {
     $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
     $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
-    $heroes = [$hero_firstnames, $hero_lastnames];
-    $randname = $heroes[rand(0, count($heroes))][rand(0, 10)];
+    $heroes = [$hero_firstnames,$hero_lastnames];
+    $randname = $heroes[rand(0, count($heroes)-1)][rand(0, 10)];
 
-    echo $randname;
+    return $randname;
 }
 
 echo "Here is the name: " . combineNames();
