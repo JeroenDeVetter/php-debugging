@@ -137,22 +137,24 @@ function isLinkValid(string $link)
 {
     $unacceptables = array('https:', '.doc', '.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
 
-    foreach ($unacceptables as $unacceptable) {
-        if (strpos($link, $unacceptable) == true) {
+    foreach ($unacceptables as &$unacceptable) {
+        if (strpos($link, $unacceptable) !== false) {
+
             return 'Unacceptable Found<br />';
         }
+
     }
     return 'Acceptable<br />';
 }
 
 //invalid link
-var_dump(isLinkValid('http://www.google.com/hack.pdf'));
+echo isLinkValid('http://www.google.com/hack.pdf');
 //invalid link
-var_dump(isLinkValid('https://google.com'));
+echo isLinkValid('https://google.com');
 //VALID link
-var_dump(isLinkValid('http://google.com'));
+echo isLinkValid('http://google.com');
 //VALID link
-var_dump(isLinkValid('http://google.com/test.txt'));
+echo isLinkValid('http://google.com/test.txt');
 
 
 new_exercise(10);
