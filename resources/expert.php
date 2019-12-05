@@ -35,8 +35,8 @@ new_exercise(3);
 // === Exercise 3 ===
 // This should echo ` "Debugged !" `, fix it so that that is the literal text echo'ed
 
-$str = “Debugged.!Also.very.fun”;
-echo substr($str, 9, 2);
+$str = 'Debugged!'.'Also'.'very'.'fun';
+echo substr($str, 6, 2);
 
 
 new_exercise(4);
@@ -46,7 +46,9 @@ new_exercise(4);
 // Look up whats going wrong with this code, and then fix it, with ONE CHARACTER!
 
 foreach ($week as $day) {
-    $day = substr($day, 0, strlen($day) - 3);
+
+       print_r( $day = substr($day, 0, count(strlen($day)) - 4).' ');
+
 }
 
 print_r($week);
@@ -62,7 +64,7 @@ for ($letter = 'a'; $letter <= 'z'; $letter++) {
     array_push($arr, $letter);
 }
 
-print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
+for ($i = 0 ; $i <= 25 ; $i++ )print_r($arr[$i].' '); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
 
 
 new_exercise(6);
